@@ -1,0 +1,54 @@
+{
+  "category": [
+    {
+      "id": "c1",
+      "title": "Italy",
+      "color": "9C27B0"
+    },
+    {
+      "id": "c2",
+      "title": "fast food",
+      "color": "F44336"
+    },
+    {
+      "id": "c3",
+      "title": "Hambergur",
+      "color": "FF9800"
+    },
+    {
+      "id": "c4",
+      "title": "Deutschland",
+      "color": "FFC107"
+    },
+    {
+      "id": "c5",
+      "title": "sweetie",
+      "color": "2196F3"
+    },
+    {
+      "id": "c6",
+      "title": "exotic",
+      "color": "4CAF50"
+    },
+    {
+      "id": "c7",
+      "title": "breakfast",
+      "color": "03A9F4"
+    },
+    {
+      "id": "c8",
+      "title": "Asian",
+      "color": "8BC34A"
+    },
+    {
+      "id": "c9",
+      "title": "Francais",
+      "color": "E91E63"
+    },
+    {
+      "id": "c10",
+      "title": "Summer",
+      "color": "009688"
+    }
+    ]
+  }

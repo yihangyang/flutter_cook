@@ -1,0 +1,2 @@
+extension StringFit on String {
+}
