@@ -2,11 +2,13 @@ import 'package:cook/core/routers/route.dart';
 import 'package:cook/core/viewmodel/favor_view_model.dart';
 import 'package:cook/core/viewmodel/filter_view_model.dart';
 import 'package:cook/core/viewmodel/meal_view_model.dart';
+import 'package:cook/l18n/my_localizations_delegate.dart';
 import 'package:cook/ui/shares/app_theme.dart';
 import 'package:cook/ui/shares/size_fit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:cook/generated/l10n.dart';
 
 void main() {
   // Provider => ViewModel/Provider/Consumer(Selector)
@@ -44,15 +46,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Cook',
-      supportedLocales: [
-        Locale('de'),
-        Locale('zh'),
-        Locale('en'),
-      ],
+      supportedLocales: S.delegate.supportedLocales,
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
+        MyLocalizationsDelegate.delegate,
+        S.delegate
       ],
       // theme
       theme: AppTheme.norTheme,
