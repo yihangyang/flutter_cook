@@ -1,3 +1,4 @@
+import 'package:cook/ui/pages/filter/filter.dart';
 import 'package:flutter/material.dart';
 import "package:cook/core/extensions/int_extension.dart";
 
@@ -14,7 +15,8 @@ class HomeDrawer extends StatelessWidget {
               Navigator.of(context).pop();
             }),
             buildListTile(context, Icon(Icons.settings), "fliter", () {
-              Navigator.of(context).pop();
+              // Navigator.of(context).pop();
+              Navigator.of(context).pushNamed(FilterScreen.routeName);
             }),
           ],
         ),

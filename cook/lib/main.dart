@@ -1,9 +1,11 @@
 import 'package:cook/core/routers/route.dart';
 import 'package:cook/core/viewmodel/favor_view_model.dart';
+import 'package:cook/core/viewmodel/filter_view_model.dart';
 import 'package:cook/core/viewmodel/meal_view_model.dart';
 import 'package:cook/ui/shares/app_theme.dart';
 import 'package:cook/ui/shares/size_fit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -11,8 +13,22 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (ctx) => MealViewModel()),
-        ChangeNotifierProvider(create: (ctx) => FavorViewModel()),
+        ChangeNotifierProvider(create: (ctx) => FilterViewModel()),
+        ChangeNotifierProxyProvider<FilterViewModel, MealViewModel>(
+          create: (ctx) => MealViewModel(),
+          update: (ctx, filterVM, mealVM) {
+            mealVM.updateFilters(filterVM);
+            return mealVM;
+          }
+        ),
+        ChangeNotifierProxyProvider<FilterViewModel, FavorViewModel>(
+          create: (ctx) => FavorViewModel(),
+          update: (ctx, filterVM, favorVM) {
+            favorVM.updateFilters(filterVM);
+            return favorVM;
+          }
+        ),
+        // ChangeNotifierProvider(create: (ctx) => FavorViewModel()),
       ],
       child: MyApp(),
     )
@@ -28,6 +44,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Cook',
+      supportedLocales: [
+        Locale('de'),
+        Locale('zh'),
+        Locale('en'),
+      ],
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
       // theme
       theme: AppTheme.norTheme,
       // route

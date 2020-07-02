@@ -1,19 +1,14 @@
 import 'package:cook/core/models/meal_model.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:cook/core/viewmodel/base_meal_view_model.dart';
 
-class FavorViewModel extends ChangeNotifier {
-  List<MealModel> _favorMeals = [];
-
-  List<MealModel> get favorMeals {
-    return _favorMeals;
-  }
+class FavorViewModel extends BaseMealViewModel {
   void addMeal(MealModel meal) {
-    _favorMeals.add(meal);
+    originalMeals.add(meal);
     notifyListeners();
   }
 
   void removeMeal(MealModel meal) {
-    _favorMeals.remove(meal);
+    originalMeals.remove(meal);
     notifyListeners();
   }
 
@@ -26,6 +21,6 @@ class FavorViewModel extends ChangeNotifier {
   }
   
   bool isFavor(MealModel meal) {
-    return _favorMeals.contains(meal);
+    return originalMeals.contains(meal);
   }
 }
