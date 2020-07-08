@@ -25,7 +25,6 @@ class MealContent extends StatelessWidget {
           }
         );
       },
-      
     );
   }
   // use consumer

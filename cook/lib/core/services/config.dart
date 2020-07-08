@@ -1,4 +1,4 @@
 class HttpConfig {
-  static const String baseUrl = "http://123.207.32.32:8001/api";
+  static const String baseUrl = "https://raw.githubusercontent.com/yihangyang/flutter_cook/master/cook/assets/json/";
   static const int timeout = 6000;
 }

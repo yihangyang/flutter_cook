@@ -16,7 +16,7 @@ class MealModel {
         this.title,
         this.affordability,
         this.complexity,
-        this.complexStr,
+        // this.complexStr,
         this.imageUrl,
         this.duration,
         this.ingredients,
@@ -30,9 +30,9 @@ class MealModel {
     String id;
     List<String> categories;
     String title;
-    int affordability;
-    int complexity;
-    String complexStr;
+    String affordability;
+    String complexity;
+    // String complexStr;
     String imageUrl;
     int duration;
     List<String> ingredients;
@@ -48,7 +48,7 @@ class MealModel {
         title: json["title"],
         affordability: json["affordability"],
         complexity: json["complexity"],
-        complexStr: complexes[json["complexity"]],
+        // complexStr: complexes[json["complexity"]],
         imageUrl: json["imageUrl"],
         duration: json["duration"],
         ingredients: List<String>.from(json["ingredients"].map((x) => x)),

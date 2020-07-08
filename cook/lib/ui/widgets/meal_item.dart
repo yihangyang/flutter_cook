@@ -74,7 +74,7 @@ class MealItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           OprationItem(Icon(Icons.schedule), "${_meal.duration} mins"),
-          OprationItem(Icon(Icons.restaurant), "${_meal.complexStr}"),
+          OprationItem(Icon(Icons.restaurant), "${_meal.complexity}"),
           buildFavorItem(),
         ],
       ),
